@@ -1,3 +1,6 @@
+Guia de consultas para o Comando SELECT. :D
+
+
 # SQL Query
 
 SQL - Structured Query Language
