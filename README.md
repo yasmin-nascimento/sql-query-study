@@ -1,7 +1,8 @@
-Guia de consultas para o Comando SELECT. :D
+# Guia de consultas para o Comando SELECT. :D
 
+Este guia está sendo desenvolvido para auxiliar iniciantes que desejam aprender como realizar consultas básicas em banco de dados.
 
-# SQL Query
+## O que é o SQL?
 
 SQL - Structured Query Language
 
