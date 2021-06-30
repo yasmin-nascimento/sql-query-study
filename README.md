@@ -9,7 +9,7 @@ SQL - Structured Query Language
 ## Tabela de Conteúdo
 
 * SQL SELECT
-* SQL SLECT Distinct
+* SQL SELECT Distinct
 * SQL WHERE
   * Operadores em Where
 * SQL AND, OR e NOT
@@ -48,15 +48,15 @@ O WHERE é utilizado para filtrar especificos resultados a partir de uma condiç
 SELECT coluna1, coluna2 FROM nome_tabela WHERE condicao
 ~~~~
 ~~~~sql
-SELECT * FROM Cliente WHERE País = 'Brasil'
+SELECT * FROM Clientes WHERE País = 'Brasil'
 ~~~~
 ~~~~sql
-SELECT * FROM Cliente WHERE ClienteID = 1
+SELECT * FROM Clientes WHERE ClienteID = 1
 ~~~~
 
 Nos dois últimos exemplos está sendo feita uma seleção de todas as colunas da tabela Cliente, com alguns filtros aplicados, onde primeiramente é para um filtro todos os clientes que possuem o valor do País igual a Brasil e na depois um filtro onde o cliente possui o código identificador 1.
 
-   ## Operadores em WHERE
+### Operadores em WHERE
     
 | Operador | Descrição |
 | --- | --- |
@@ -69,34 +69,39 @@ Nos dois últimos exemplos está sendo feita uma seleção de todas as colunas d
 | BETWEEN | Especifica um range |
 | LIKE | Específica um pattern |
 | IN | Especifica multiplos possíveis valores para uma coluna |
-    
+ 
+Sintaxe com o uso dos operadores
+
+~~~~sql
+SELECT ClienteID, NomeCliente FROM Clientes
+WHERE ClienteID >= 15 AND ClienteID <= 50
+~~~~ 
+ 
 ## SQL AND, OR e NOT 
   
 O WHERE pode ser combinado com os operados AND, OR e NOT.
 Os operadores AND e OR são utilizados para filtrar resultados baseados em mais de uma condição. Esse dois operadores returnam os resultados quando eles são verdadeiros. O NOT, ira retornar o resultado quando a condição não for verdadeira
 
+
+Sintaxe AND, OR e NOT
 ~~~~sql
 SELECT coluna1, coluna2 FROM nome_tabela 
 WHERE condicao1 AND condicao2
 ~~~~
 ~~~~sql
-SELECT * FROM Cliente
-WHERE Cidade = 'Sao Paulo'
-AND Cep = 01000-123
+SELECT * FROM Clientes
+WHERE Cidade = 'Sao Paulo' AND Cep = 01000-123
 ~~~~
-
-Sintaxe OR
-
 ~~~~sql
-SELECT * FROM Cliente
-WHERE Cidade = 'Sao Paulo'
-OR Cidade = 'Campinas'
+SELECT ClienteID, NomeCliente FROM Clientes
+WHERE UF = 'MG' OR (UF = 'SP' AND ClienteAtivo = 'N')
 ~~~~
-
-Sintaxe NOT
-
 ~~~~sql
-SELECT * FROM Cliente
+SELECT * FROM Clientes
+WHERE Cidade = 'Sao Paulo' OR Cidade = 'Campinas'
+~~~~
+~~~~sql
+SELECT * FROM Clientes
 WHERE NOT Cidade = 'Sao Paulo'
 ~~~~
     
@@ -172,7 +177,8 @@ Sintaxe
  
  ## SQL LIKE
  
- O operador LIKE é usando com o WHERE para pesquisar por especificos resultados em uma coluna.
+ O operador LIKE é usado com o WHERE para pesquisar por especificos resultados em uma coluna com informações de texto. Por exemplo, se você deseja obter um resultado de 
+ todos os clientes que começam ou terminam com uma letra específica, você deve usar o LIKE.
 
 | Operador | Descrição |
 | --- | --- |
@@ -197,6 +203,8 @@ Sintaxe
  SELECT * FROM Clientes
  WHERE NomeCliente NOT LIKE 'a%'
  ~~~~
+
+###### *Observação: para alguns bancos de dados, a máscara do filtro não é representada pelo símbolo %*
 
  ## SQL BETWEEN
  
@@ -271,7 +279,7 @@ Podemos criar a seguinte query para selecionar registros que combinem os valores
  ~~~~sql
  SELECT Pedidos.PedidoID, Clientes.NomeCliente, Pedidos.DataPedido
  FROM Pedidos
- INNER JOIN Clientes ON Pedidos.ClienteID=Clientes.ClienteID
+ INNER JOIN Clientes ON Pedidos.ClienteID = Clientes.ClienteID
  ~~~~
 
 Essa query irá resultar em:
@@ -288,10 +296,10 @@ Essa query irá resultar em:
   
   Existem diferentes tipos de Joins no SQL:
 
-   * (INNER) JOIN
-   * LEFT (OUTER) JOIN
-   * RIGHT (OUTER) JOIN
-   * FULL (OUTER) JOIN
+   * (INNER) JOIN - retorna resultados em que combinam valores em ambas tabelas
+   * LEFT (OUTER) JOIN - retorna todos os resultados da tabela da esquerda e combina os resultados a partir da tabela da direita
+   * RIGHT (OUTER) JOIN - retorna todos os resultados da tabela da direita e combina os resultados a partir da tabela da esquerda
+   * FULL (OUTER) JOIN - retorna todos os resultados quando existir uma combinação do lado direito ou esquerdo da tabela.
 
 
 
