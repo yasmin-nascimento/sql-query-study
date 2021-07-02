@@ -302,6 +302,52 @@ Essa query irá resultar em:
    * FULL (OUTER) JOIN - retorna todos os resultados quando existir uma combinação do lado direito ou esquerdo da tabela.
 
 
+![image](https://user-images.githubusercontent.com/33867110/124308083-1c59c580-db3f-11eb-9baf-ed29e5347d53.png)
 
+
+Sintaxe INNER JOIN
+
+ ~~~~sql
+ SELECT nome_coluna(s)
+ FROM tabela1
+ INNER JOIN tabela2 ON tabela1.nome_coluna = tabela2.nome_coluna
+ ~~~~
+ ~~~~sql
+ SELECT Pedidos.PedidoID, Clientes.NomeCliente, Pedidos.DataPedido
+ FROM Pedidos
+ INNER JOIN Clientes ON Pedidos.ClienteID = Clientes.ClienteID
+ ~~~~
+ 
+ Sintaxe LEFT JOIN
+ 
+  ~~~~sql
+ SELECT nome_coluna(s)
+ FROM tabela1
+ LEFT JOIN tabela2 ON tabela1.nome_coluna = tabela2.nome_coluna
+ ~~~~
+
+ Sintaxe RIGHT JOIN
+
+  ~~~~sql
+ SELECT nome_coluna(s)
+ FROM tabela1
+ RIGHT JOIN tabela2 ON tabela1.nome_coluna = tabela2.nome_coluna
+ ~~~~
+
+Sintaxe FULL OUTER JOIN
+
+  ~~~~sql
+ SELECT nome_coluna(s)
+ FROM tabela1
+ FULL OUTER JOIN tabela2 ON tabela1.nome_coluna = tabela2.nome_coluna
+ WHERE condicao
+ ~~~~
+
+  ~~~~sql
+ SELECT Clientes.NomeCliente, Pedidos.PedidoID
+ FROM Clientes
+ FULL OUTER JOIN Pedidos ON Clientes.ClienteID = Pedidos.ClienteID
+ ORDER BY Clientes.ClienteNome
+ ~~~~
 
 [Em desenvolvimento...]
