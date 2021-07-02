@@ -6,19 +6,22 @@ Este guia está sendo desenvolvido para auxiliar iniciantes que desejam aprender
 
 SQL - Structured Query Language
 
-## Tabela de Conteúdo
+## Conteúdo
 
-* SQL SELECT
-* SQL SELECT Distinct
-* SQL WHERE
-  * Operadores em Where
-* SQL AND, OR e NOT
-  * Combinação dos operadores AND, OR e NOT
-* SQL ORDER BY
-* SQL SELECT TOP
-* SQL MIN() e MAX()
-* SQL LIKE
-* SQL BETWEEN
+* [SQL SELECT](#sql-select)
+* [SQL SELECT Distinct](#sql-distinct)
+* [SQL WHERE](#sql-where)
+  * [Operadores em Where](#operadores-em-where)
+* [SQL AND, OR e NOT](#sql-and-or-e-not)
+* [SQL ORDER BY](#sql-order-by)
+* [SQL SELECT TOP](#sql-select-top)
+* [SQL MIN() e MAX()](#sql-min-e-max)
+* [SQL Count, Avg, Sum](#sql-count-avg-sum)
+* [SQL LIKE](#sql-like)
+* [SQL BETWEEN](#sql-between)
+* [SQL ALIASES](#sql-aliases)
+* [SQL JOINS](#sql-joins)
+  * [Diferentes tipos de JOINS](#diferentes-tipos-de-joins)
 
 
  ## SQL SELECT
@@ -147,7 +150,7 @@ Sintaxe
  SELECT TOP 50 PERCENT * FROM Clientes
  ~~~~
  
- ## SQL MIN() e MAX()
+ ## SQL MIN e MAX
  
  A função MIN() retorna o menor valor da coluna selecionada. Enquanto a função MAX(), retorna o mair valor da coluna selecionada.
  
@@ -174,6 +177,10 @@ Sintaxe
  SELECT MAX(Precos)
  FROM Produtos
  ~~~~
+ 
+ ## SQL Count, Avg, Sum
+ 
+ [Em desenvolvimento...]
  
  ## SQL LIKE
  
