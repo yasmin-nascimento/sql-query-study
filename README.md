@@ -88,7 +88,7 @@ WHERE ClienteID >= 15 AND ClienteID <= 50
  
 ## SQL AND, OR e NOT 
   
-O WHERE ainda pode ser combinado com os operados AND, OR e NOT.
+O WHERE ainda pode ser combinado com os operadores AND, OR e NOT.
 Os operadores AND e OR são utilizados para filtrar resultados baseados em mais de uma condição. Esse dois operadores retornarão os resultados, quando eles forem verdadeiros. O NOT, irá retornar o resultado quando a condição não for verdadeira.
 
 
