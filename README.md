@@ -27,7 +27,7 @@ A sigla SQL significa, Linguagem de Consulta Estruturada ou em inglês, Structur
 
  ## SQL SELECT
 
-O SELECT é utilizado para selecionar dados a partir de um banco de dados. Você pode especificar as colunas que serão selecionadas ou utilizar o arterisco para selecionar todas as colunas da tabela em que você deseja realizar uma consulta.
+O SELECT é utilizado para selecionar dados a partir de um banco de dados. Você pode especificar as colunas que serão selecionadas ou utilizar o asterisco para selecionar todas as colunas da tabela em que você deseja realizar uma consulta.
 
 ~~~~sql
 SELECT coluna1, coluna2 FROM nome_tabela
@@ -38,7 +38,7 @@ SELECT * FROM nome_tabela
 
   ## SQL DISTINCT
   
-O SELECT DISTINCT é utilizado para retornar somente valores distintos/diferentes de uma tabela, a coluna pode ter dados duplicados; e algumas vezes você só quer que seja listados os dados distintos.
+O SELECT DISTINCT é utilizado para retornar somente valores distintos/diferentes de uma tabela, a coluna pode ter dados duplicados; e algumas vezes você só quer que seja listado os dados distintos.
 
 ~~~~sql
 SELECT DISTINCT coluna1, coluna2 FROM nome_tabela
@@ -63,7 +63,7 @@ SELECT * FROM Clientes WHERE ClienteID = 1
 ~~~~
 
 Com o WHERE você pode utilizar operadores lógicos para buscar por informações distintas ou definir uma range de pesquisa.
-Segue abaixo um tabela com os operadores:
+Segue abaixo uma tabela com os operadores:
 
 ### Operadores em WHERE
     
@@ -77,7 +77,7 @@ Segue abaixo um tabela com os operadores:
 | <> | Não igual. Em algumas versões do SQL, o operador pode ser escrito como != |
 | BETWEEN | Especifica um range |
 | LIKE | Específica um pattern |
-| IN | Específica multiplos possíveis valores para uma coluna |
+| IN | Específica múltiplos possíveis valores para uma coluna |
  
 Sintaxe com o uso dos operadores
 
@@ -89,7 +89,7 @@ WHERE ClienteID >= 15 AND ClienteID <= 50
 ## SQL AND, OR e NOT 
   
 O WHERE ainda pode ser combinado com os operados AND, OR e NOT.
-Os operadores AND e OR são utilizados para filtrar resultados baseados em mais de uma condição. Esse dois operadores retornarão os resultados, quando eles forem verdadeiros. O NOT, irá retornar o resultado quando a condição não for verdadeira.
+Os operadores AND e OR são utilizados para filtrar resultados baseados em mais de uma condição. Esses dois operadores retornarão os resultados, quando eles forem verdadeiros. O NOT, irá retornar o resultado quando a condição não for verdadeira.
 
 
 Sintaxe AND, OR e NOT
@@ -116,7 +116,7 @@ WHERE NOT Cidade = 'Sao Paulo'
     
  ## SQL ORDER BY 
  
- A palavra-chave ORDER BY é usada para ordernar um resultado de maneira ascendente ou descendente. Por padrão, os resultados retornam de maneira ascendente. Sendo assim, para ordernar de maneira descendente é necessário usar a palavra-chave DESC após o nome da coluna que será ordenada.
+ A palavra-chave ORDER BY é usada para ordenar um resultado de maneira ascendente ou descendente. Por padrão, os resultados retornam de maneira ascendente. Sendo assim, para ordenar de maneira descendente é necessário usar a palavra-chave DESC após o nome da coluna que será ordenada.
  
  Sintaxe
  
@@ -150,7 +150,7 @@ Sintaxe
  
  Sintaxe TOP n PERCENT
  
- A seguinte sintaxe permite selecionar 50% dos resgistros da tabela "Clientes"
+ A seguinte sintaxe permite selecionar 50% dos registros da tabela "Clientes"
  ~~~~sql
  SELECT TOP 50 PERCENT * FROM Clientes
  ~~~~
@@ -159,7 +159,7 @@ Sintaxe
  
  A função MIN() retorna o menor valor da coluna selecionada. Enquanto a função MAX(), retorna o maior valor da coluna selecionada.
  
- Sintax MIN()
+ Sintaxe MIN()
  ~~~~sql
  SELECT MIN(coluna_nome)
  FROM tabela_nome
@@ -170,7 +170,7 @@ Sintaxe
  FROM Produtos
  ~~~~
  
- Sintax MAX()
+ Sintaxe MAX()
  ~~~~sql
  SELECT MAX(coluna_nome)
  FROM tabela_nome
@@ -183,7 +183,7 @@ Sintaxe
  
  ## SQL Count, Avg, Sum
  
- A função COUNT() é utilizada para retornar o número de linhas a partir de uma determinada condição. Já a função AVG() retorna a média aritmédica de uma coluna numérica. 
+ A função COUNT() é utilizada para retornar o número de linhas a partir de uma determinada condição. Já a função AVG() retorna a média aritmética de uma coluna numérica. 
  E por último, a função SUM() retorna o total de uma coluna numérica.
   
  Vale lembrar que para a função COUNT(), valores nulos não são considerados. Já para as outras duas funções, os valores nulos são ignorados.
@@ -223,8 +223,8 @@ Sintaxe
  
  ## SQL LIKE
  
- O operador LIKE é usado com o WHERE para pesquisar por especificos resultados em uma coluna com informações do tipo **texto**. Por exemplo, se você deseja obter um resultado de 
- todos os clientes que começem ou terminem com uma letra específica, você deve usar o LIKE.
+ O operador LIKE é usado com o WHERE para pesquisar por específicos resultados em uma coluna com informações do tipo **texto**. Por exemplo, se você deseja obter um resultado de 
+ todos os clientes que comecem ou terminem com uma letra específica, você deve usar o LIKE.
 
 | Operador | Descrição |
 | --- | --- |
@@ -243,7 +243,7 @@ Sintaxe
  WHERE NomeCliente LIKE 'a%'
  ~~~~
  
- O exemplo abaixo, seleciona todos os clientes da tabela NomeCliente que não começem com a letra "a". E o último por sua vez, seleciona todos os Clientes que possuem a Cidade  em que as iniciais sejam as letras, A, C e S.
+ O exemplo abaixo, seleciona todos os clientes da tabela NomeCliente que não comecem com a letra "a". E o último por sua vez, seleciona todos os Clientes que possuem a Cidade  em que as iniciais sejam as letras, A, C e S.
  
  ~~~~sql
  SELECT * FROM Clientes
@@ -258,7 +258,7 @@ Sintaxe
 
  ## SQL BETWEEN
  
- O operador BETWEEN seleciona valores dentro de um range especificado. O valores podem ser numéricos, texto ou datas.
+ O operador BETWEEN seleciona valores dentro de um range especificado. Os valores podem ser numéricos, texto ou datas.
  
  Sintaxe
  ~~~~sql
@@ -289,7 +289,7 @@ Sintaxe
  
  ## SQL ALIASES
  
- O Aliases é utilizado para dar a uma tabela/coluna em uma tabela, um nome temporário. Normalmente utilizado para tornar o nome das colunas mais legiveis.
+ O Aliases é utilizado para dar a uma tabela/coluna em uma tabela, um nome temporário. Normalmente utilizado para tornar o nome das colunas mais legíveis.
  Esse nome temporário, só existe durante a execução da query. A palavra-chave que representa o ALIASES é **AS**.
  
  Sintaxe
